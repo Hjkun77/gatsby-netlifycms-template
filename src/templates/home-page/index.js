@@ -15,9 +15,10 @@ export const HomePageTemplate = ({
 }
 
 const HomePage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, fields } = data.markdownRemark
+  const { title } = data.site.siteMetadata;
   return (
-    <Layout location={frontmatter.slug} title={frontmatter.seo.siteTitle}>
+    <Layout location={fields.slug} title={title}>
       <SEO
         title={frontmatter.seo.siteTitle}
         description={frontmatter.seo.siteDescription}
@@ -35,9 +36,16 @@ export default HomePage
 
 export const HomePageQuery = graphql`
   query HomePage($id: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     markdownRemark(id: { eq: $id }) {
-      frontmatter {
+      fields {
         slug
+      }
+      frontmatter {
         heroSection {
           greetings
           image {
@@ -50,6 +58,7 @@ export const HomePageQuery = graphql`
                       base64
                   }
               }
+              publicURL
           }
           description
           buttonText

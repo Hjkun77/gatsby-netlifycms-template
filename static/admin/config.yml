@@ -1,8 +1,8 @@
 backend:
   name: test-repo
 
-media_folder: static/assets
-public_folder: assets
+media_folder: static/uploads
+public_folder: uploads
 
 collections:
   - name: home_page
@@ -11,7 +11,7 @@ collections:
       field: "templateKey"
       value: "home-page"
     files:
-      - file: src/markdown/index.md
+      - file: src/pages/index.md
         label: Home
         name: index
         fields:
@@ -30,9 +30,10 @@ collections:
               - label: Greetings
                 name: greetings
                 widget: string
-              - label: Image
+              - label: "Featured Image"
                 name: image
                 widget: image
+                default: /uploads/GatsbyScene.svg
               - label: Description
                 name: description
                 widget: markdown

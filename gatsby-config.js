@@ -10,26 +10,8 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Netlifycms Template`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        // edit below
-        icon: `src/assets/images/gatsby-icon.png`,
-      },
-    },
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    // `gatsby-plugin-feed-mdx`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -55,6 +37,24 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby Netlifycms Template`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        // edit below
+        icon: `src/assets/images/gatsby-icon.png`,
+      },
+    },
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
+    // `gatsby-plugin-feed-mdx`,
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -99,18 +99,18 @@ module.exports = {
     //   },
     // },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/markdown`,
-        name: "markdown"
-      }
-    },
-    {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/uploads`,
         name: "uploads"
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages"
       }
     },
     {

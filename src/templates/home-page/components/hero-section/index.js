@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Button from "../../../../components/button"
+import Button from "../../../../components/button";
+import Img from "gatsby-image";
 
 const HeroSection = ({ heroSection }) => {
   const {
@@ -13,9 +14,17 @@ const HeroSection = ({ heroSection }) => {
   } = heroSection
   return (
     <div>
-      <img style={{ margin: 0 }} src={image && !!image.childImageSharp
+      {!!image && !!image.childImageSharp
+        ? <Img style={{ margin: 0 }} fluid={image.childImageSharp.fluid}
+          alt="Gatsby Scene"
+        />
+        : <img style={{ margin: 0 }} src={image.publicURL}
+          alt="Gatsby Scene"
+        />
+      }
+      {/* <img src={image && !!image.childImageSharp
         ? image.childImageSharp.fluid.src
-        : image} alt="Gatsby Scene" />
+        : image} alt="Gatsby Scene" /> */}
       <h1>
         {greetings}{" "}
         <span role="img" aria-label="wave emoji">
