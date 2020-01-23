@@ -5,7 +5,7 @@ import Button from "../../../../components/button"
 const HeroSection = ({ heroSection }) => {
   const {
     greetings,
-    image
+    image,
     description,
     buttonVisible,
     buttonUrl,
