@@ -5,13 +5,73 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: body, label: Body, widget: markdown }
+  - name: home_page
+    label: "Home Page"
+    filter:
+      field: "templateKey"
+      value: "home-page"
+    files:
+      - file: src/markdown/index.md
+        label: Home
+        name: index
+        fields:
+          - label: "Template Key"
+            name: templateKey
+            widget: hidden
+            default: home-page
+          - label: "URL Slug"
+            name: slug
+            widget: hidden
+            default: /
+          - label: "Hero Section"
+            name: heroSection
+            widget: object
+            fields:
+              - label: Greetings
+                name: greetings
+                widget: string
+              - label: Image
+                name: image
+                widget: image
+              - label: Description
+                name: description
+                widget: markdown
+              - label: "Button Text"
+                name: buttonText
+                widget: string
+              - label: "Button URL"
+                name: buttonUrl
+                widget: hidden
+              - label: "Show Button"
+                name: buttonVisible
+                widget: boolean
+                default: true
+          - label: SEO
+            name: seo
+            widget: object
+            fields:
+              - label: "Site Title"
+                name: siteTitle
+                widget: string
+                default: "Site Title"
+              - label: "Site Description"
+                name: siteDescription
+                widget: string
+                required: false
+                default: "Site Description"
+              - label: "Site Keywords"
+                name: siteKeywords
+                widget: string
+                required: false
+                default: ""
+                hint: "Comma delimited keywords"
+  # - name: blog
+  #   label: Blog
+  #   folder: content/blog
+  #   create: true
+  #   fields:
+  #     - { name: path, label: Path }
+  #     - { name: date, label: Date, widget: date }
+  #     - { name: title, label: Title }
+  #     - { name: description, label: Description }
+  #     - { name: body, label: Body, widget: markdown }

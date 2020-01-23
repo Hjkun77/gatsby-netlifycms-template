@@ -2,10 +2,10 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import Bio from "../src/components/bio"
+import Layout from "../src/components/layout"
+import SEO from "../src/components/seo"
+import { rhythm, scale } from "../src/utils/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
