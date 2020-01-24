@@ -69,7 +69,7 @@ collections:
   - name: blog_post
     label: "Blog Posts"
     create: true
-    slug: "blog/{{year}}-{{month}}-{{day}}-{{title}}"
+    slug: "{{ date }}-{{ title }}"
     folder: src/pages/blog
     filter:
       field: templateKey
@@ -83,11 +83,14 @@ collections:
         name: title
         widget: string
         required: true
+      - label: "URL Slug"
+        name: slug
+        widget: string
+        required: true
       - label: Date
         name: date
-        widget: date
+        widget: datetime
         required: true
-        format: "MMMM DD, YYYY"
       - label: Body
         name: body
         widget: markdown
@@ -99,7 +102,7 @@ collections:
           - label: "Site Title"
             name: siteTitle
             widget: string
-            default: "Site Title"
+            default: title
           - label: "Site Description"
             name: siteDescription
             widget: string

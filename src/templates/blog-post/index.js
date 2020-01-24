@@ -3,6 +3,7 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import { graphql } from "gatsby"
 import Bio from "../../components/bio";
+import { rhythm, scale } from "../../utils/typography"
 
 export const BlogPostTemplate = ({
   title, date, body
@@ -58,11 +59,10 @@ export const BlogPostTemplate = ({
 }
 
 const BlogPostPage = ({ data }) => {
-  const { frontmatter, fields } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
   const { title } = data.site.siteMetadata;
-  console.log(frontmatter)
   return (
-    <Layout location={fields.slug} title={title}>
+    <Layout location={frontmatter.slug} title={title}>
       <SEO
         title={frontmatter.seo.siteTitle}
         description={frontmatter.seo.siteDescription}
@@ -88,12 +88,10 @@ export const BlogPostPageQuery = graphql`
       }
     }
     markdownRemark(id: { eq: $id }) {
-      fields {
-        slug
-      }
       frontmatter {
         title
-        date
+        slug
+        date(formatString: "MMMM DD, YYYY hh:mm a")
         body
         seo {
             siteTitle
