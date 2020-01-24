@@ -60,7 +60,7 @@ export const BlogPostTemplate = ({
 const BlogPostPage = ({ data }) => {
   const { frontmatter, fields } = data.markdownRemark
   const { title } = data.site.siteMetadata;
-  console.log(frontmatter.date)
+  console.log(frontmatter)
   return (
     <Layout location={fields.slug} title={title}>
       <SEO
@@ -93,7 +93,7 @@ export const BlogPostPageQuery = graphql`
       }
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
         body
         seo {
             siteTitle

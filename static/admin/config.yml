@@ -87,9 +87,11 @@ collections:
         name: date
         widget: date
         required: true
+        format: "MMMM DD, YYYY"
       - label: Body
         name: body
         widget: markdown
+        required: true
       - label: SEO
         name: seo
         widget: object
