@@ -45,19 +45,19 @@ module.exports = {
         ]
       }
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Netlifycms Template`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        // edit below
-        icon: `src/assets/images/gatsby-icon.png`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Gatsby Netlifycms Template`,
+    //     short_name: `GatsbyJS`,
+    //     start_url: `/`,
+    //     background_color: `#ffffff`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     // edit below
+    //     icon: `src/assets/images/gatsby-icon.png`,
+    //   },
+    // },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`,
