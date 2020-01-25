@@ -37,7 +37,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
