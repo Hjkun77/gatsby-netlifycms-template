@@ -13,14 +13,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-        publicPath: `admin`,
-        manualInit: true
-      }
-    },
-    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
@@ -45,23 +37,31 @@ module.exports = {
         ]
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Gatsby Netlifycms Template`,
-    //     short_name: `GatsbyJS`,
-    //     start_url: `/`,
-    //     background_color: `#ffffff`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     // edit below
-    //     icon: `src/assets/images/gatsby-icon.png`,
-    //   },
-    // },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby Netlifycms Template`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        // edit below
+        icon: `src/assets/images/gatsby-icon.png`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        publicPath: `admin`,
+        manualInit: true
+      }
+    },
     // `gatsby-plugin-feed-mdx`,
     // {
     //   resolve: `gatsby-source-filesystem`,
