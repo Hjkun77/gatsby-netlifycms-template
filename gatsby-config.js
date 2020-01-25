@@ -142,5 +142,47 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    "gatsby-plugin-netlify"
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
+    /*{
+      resolve: `gatsby-plugin-netlify-headers`,
+      options: {
+        headers: {
+          '/*': [
+            'X-Frame-Options: ALLOW_FROM https://www.youtube-nocookie.com',
+            'X-XSS-Protection: 1; mode=block',
+            'Referrer-Policy: no-referrer',
+            'X-Content-Type-Options: nosniff',
+          ],
+        },
+      },
+    },*/
+    /*{
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        disableOnDev: true,
+        reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
+        mergeScriptHashes: true, // you can disable scripts sha256 hashes
+        mergeStyleHashes: true, // you can disable styles sha256 hashes
+        mergeDefaultDirectives: true,
+        directives: {
+          'default-src':
+            'self https://www.google-analytics.com https://www.facebook.com https://stats.g.doubleclick.net https://www.youtube.com',
+          'object-src': "'self' blob",
+          'style-src-elem':
+            "'self' 'unsafe-inline' blob: blob https://stats.g.doubleclick.net",
+          'media-src': "'self' https://stats.g.doubleclick.net",
+          'script-src':
+            "'self' 'unsafe-inline' https://connect.facebook.net https://www.google-analytics.com https://stats.g.doubleclick.net https://www.facebook.com",
+          'style-src': "'self' 'unsafe-inline' blob blob:",
+          'img-src':
+            "'self' https://www.google-analytics.com www.google-analytics.com data: https://www.google.com.ph https://www.google.com https://www.facebook.com https://stats.g.doubleclick.net https://www.youtube.com",
+          // you can add your directives or override defaults
+          'frame-src': "'self' https://www.youtube-nocookie.com",
+        },
+      },
+    },*/
   ],
 }

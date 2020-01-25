@@ -71,7 +71,7 @@ collections:
     label: "Blog Posts"
     create: true
     slug: "{{ date }}-{{ title }}"
-    folder: src/pages/blog
+    folder: src/pages/blogs
     filter:
       field: templateKey
       value: blog-post
