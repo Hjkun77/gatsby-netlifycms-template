@@ -1,13 +1,11 @@
-import React, { Fragment } from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import { graphql } from "gatsby"
-import Bio from "../../components/bio";
-import { rhythm, scale } from "../../utils/typography"
+import React, { Fragment } from 'react'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import { graphql } from 'gatsby'
+import Bio from '../../components/bio'
+import { rhythm, scale } from '../../utils/typography'
 
-export const BlogPostTemplate = ({
-  title, date, body
-}) => {
+export const BlogPostTemplate = ({ title, date, body }) => {
   return (
     <Fragment>
       <div>
@@ -60,7 +58,7 @@ export const BlogPostTemplate = ({
 
 const BlogPostPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const { title } = data.site.siteMetadata;
+  const { title } = data.site.siteMetadata
   return (
     <Layout location={frontmatter.slug} title={title}>
       <SEO
@@ -94,9 +92,9 @@ export const BlogPostPageQuery = graphql`
         date(formatString: "MMMM DD, YYYY hh:mm a")
         body
         seo {
-            siteTitle
-            siteDescription
-            siteKeywords
+          siteTitle
+          siteDescription
+          siteKeywords
         }
       }
     }

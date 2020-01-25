@@ -13,29 +13,29 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-relative-images"
+            resolve: 'gatsby-remark-relative-images',
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 2048
-            }
+              maxWidth: 2048,
+            },
           },
           {
-            resolve: "gatsby-remark-copy-linked-files",
+            resolve: 'gatsby-remark-copy-linked-files',
             options: {
-              destinationDir: "static"
-            }
-          }
-        ]
-      }
+              destinationDir: 'static',
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`,
@@ -115,18 +115,18 @@ module.exports = {
     // },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/uploads`,
-        name: "uploads"
-      }
+        name: 'uploads',
+      },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages"
-      }
+        name: 'pages',
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -141,7 +141,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    "gatsby-plugin-netlify"
+    'gatsby-plugin-netlify',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

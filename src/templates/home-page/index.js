@@ -1,12 +1,10 @@
-import React, { Fragment } from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import { graphql } from "gatsby"
-import HeroSection from "./components/hero-section"
+import React, { Fragment } from 'react'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import { graphql } from 'gatsby'
+import HeroSection from './components/hero-section'
 
-export const HomePageTemplate = ({
-  heroSection
-}) => {
+export const HomePageTemplate = ({ heroSection }) => {
   return (
     <Fragment>
       <HeroSection heroSection={heroSection} />
@@ -16,7 +14,7 @@ export const HomePageTemplate = ({
 
 const HomePage = ({ data }) => {
   const { frontmatter, fields } = data.markdownRemark
-  const { title } = data.site.siteMetadata;
+  const { title } = data.site.siteMetadata
   return (
     <Layout location={fields.slug} title={title}>
       <SEO
@@ -25,9 +23,7 @@ const HomePage = ({ data }) => {
         keywords={frontmatter.seo.siteKeywords}
       />
 
-      <HomePageTemplate
-        heroSection={frontmatter.heroSection}
-      />
+      <HomePageTemplate heroSection={frontmatter.heroSection} />
     </Layout>
   )
 }
@@ -49,16 +45,16 @@ export const HomePageQuery = graphql`
         heroSection {
           greetings
           image {
-              childImageSharp {
-                  fluid(maxWidth: 1440, quality: 90) {
-                      src
-                      srcSet
-                      aspectRatio
-                      sizes
-                      base64
-                  }
+            childImageSharp {
+              fluid(maxWidth: 1440, quality: 90) {
+                src
+                srcSet
+                aspectRatio
+                sizes
+                base64
               }
-              publicURL
+            }
+            publicURL
           }
           description
           buttonText

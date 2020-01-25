@@ -1,17 +1,17 @@
-import React from "react"
-import { StyleSheetManager } from "styled-components"
+import React from 'react'
+import { StyleSheetManager } from 'styled-components'
 
 class CSSInjector extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      iframeRef: "",
+      iframeRef: '',
     }
   }
 
   componentDidMount() {
-    const iframe = document.querySelector("#nc-root iframe")
+    const iframe = document.querySelector('#nc-root iframe')
     const iframeHeadElem = iframe && iframe.contentDocument.head
     this.setState({ iframeRef: iframeHeadElem })
   }
