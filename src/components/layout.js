@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm, scale } from '../utils/typography'
 
 class Layout extends React.Component {
   render() {
@@ -11,7 +11,8 @@ class Layout extends React.Component {
     const blogPath = `${__PATH_PREFIX__}/blog/`
     let header
 
-    if (location.pathname === rootPath || location.pathname === blogPath) {
+    console.log(location)
+    if (location === rootPath || location === blogPath) {
       header = (
         <h1
           style={{
@@ -26,7 +27,7 @@ class Layout extends React.Component {
               textDecoration: `none`,
               color: `inherit`,
             }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
+            to={location === blogPath ? `/blog/` : `/`}
           >
             {title}
           </Link>
@@ -69,7 +70,8 @@ class Layout extends React.Component {
         <Footer>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">Gatsby</a> and {` `}{' '}
+          <a href="https://www.netlifycms.org/">Netlify CMS</a>
         </Footer>
       </Wrapper>
     )

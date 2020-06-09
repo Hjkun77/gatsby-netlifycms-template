@@ -1,3 +1,4 @@
 // custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+import 'normalize.css'
+import 'typeface-montserrat'
+import 'typeface-merriweather'
